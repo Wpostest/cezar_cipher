@@ -15,14 +15,7 @@ const cezar_cipher = function(input){
 
     for (const letter of text) {
         let index = alphabet.search(new RegExp(letter, 'i'));
-        index += rot;
-
-        if(index > (alphabet.length - 1)){
-            index = index - (alphabet.length - 1);
-        }
-        else if(index < 0){
-            index = index + (alphabet.length - 1);
-        }
+        index = (index + rot) % alphabet.length;
 
         if(letter.toLowerCase() === letter){
             resoult += alphabet[index].toLowerCase();
@@ -32,7 +25,7 @@ const cezar_cipher = function(input){
         }
     }
 
-    return resoult; 
+    return [input, resoult]; 
 }
 
 export {cezar_cipher};

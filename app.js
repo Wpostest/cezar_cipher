@@ -1,2 +1,4 @@
 import {cezar_cipher} from "./cezar_module";
-console.log(cezar_cipher('PRZEPROGRAMOWANI'));
+const [input, resoult] = cezar_cipher('Przeprogramowani');
+console.log(input);
+console.log(resoult);

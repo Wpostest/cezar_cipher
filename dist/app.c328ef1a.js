@@ -150,13 +150,7 @@ var cezar_cipher = function cezar_cipher(input) {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var letter = _step.value;
       var index = alphabet.search(new RegExp(letter, 'i'));
-      index += rot;
-
-      if (index > alphabet.length - 1) {
-        index = index - (alphabet.length - 1);
-      } else if (index < 0) {
-        index = index + (alphabet.length - 1);
-      }
+      index = (index + rot) % alphabet.length;
 
       if (letter.toLowerCase() === letter) {
         resoult += alphabet[index].toLowerCase();
@@ -170,7 +164,7 @@ var cezar_cipher = function cezar_cipher(input) {
     _iterator.f();
   }
 
-  return resoult;
+  return [input, resoult];
 };
 
 exports.cezar_cipher = cezar_cipher;
@@ -179,7 +173,25 @@ exports.cezar_cipher = cezar_cipher;
 
 var _cezar_module = require("./cezar_module");
 
-console.log((0, _cezar_module.cezar_cipher)('PRZEPROGRAMOWANI'));
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var _cezar_cipher = (0, _cezar_module.cezar_cipher)('Przeprogramowani'),
+    _cezar_cipher2 = _slicedToArray(_cezar_cipher, 2),
+    input = _cezar_cipher2[0],
+    resoult = _cezar_cipher2[1];
+
+console.log(input);
+console.log(resoult);
 },{"./cezar_module":"cezar_module.js"}],"C:/Users/filip/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -208,7 +220,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54779" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56048" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
