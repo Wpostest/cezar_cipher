@@ -1,0 +1,22 @@
+{
+	"name": "cezar_cipher",
+	"version": "1.0.0",
+	"description": "Try to debugging with Parcel Buldner",
+	"main": "app.js",
+	"scripts": {
+		"start:dev": "parcel index.html"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Wpostest/cezar_cipher.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Wpostest/cezar_cipher/issues"
+	},
+	"homepage": "https://github.com/Wpostest/cezar_cipher#readme",
+	"devDependencies": {
+		"parcel-bundler": "^1.12.4"
+	}
+}
